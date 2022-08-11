@@ -1,0 +1,10 @@
+.section {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 8194px;
+    width: 100%;
+}
