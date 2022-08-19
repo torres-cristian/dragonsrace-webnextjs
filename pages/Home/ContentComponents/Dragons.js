@@ -1,3 +1,5 @@
+import Slider from "./SliderDragons";
+
 export default function Dragons() {
     return <section id="dragons">
         <div className="details">
@@ -22,12 +24,13 @@ export default function Dragons() {
                         <span className="month">SEP</span>
                         <span className="year">2022</span>
                     </div>
-                    <a className="btnWhite">Mint now</a>
+                    {/* que te lleve al discord */}
+                    <a className="btnWhite">Join whitelist</a>
                 </div>
             </div>
         </div>
         <div className="slider">
-            <img src="/images/nft/dragon1.png" />
+            <Slider/>
         </div>
     </section>
 }

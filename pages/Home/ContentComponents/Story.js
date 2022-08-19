@@ -1,18 +1,80 @@
+import React, { Component, useState } from "react"
+
 export default function Story() {
+    const [active, setActive] = useState('The World')
+
     return <section id="story">
-        <span className="btn">The Wishlist</span>
-        <div className="details">
-            <img src="/images/Millenia.jpeg" width={500}/>
-            <div>
-                <h3>Millenia, la ciudad que no tiene...</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
-                </p>
-                <a className="btn rounded">See More...</a>
-            </div>
+        <div className="buttons">
+            <Clickable label={'The World'} active={active} setActive={setActive}/>
+            <Clickable label={'The Dragons'} active={active} setActive={setActive}/>
+            <Clickable label={'The Race'} active={active} setActive={setActive}/>
         </div>
+        {active === 'The World' ? <TheWorld/> : active === 'The Dragons' ? <TheDragons/> : <TheRace/> }
     </section>
+}
+
+function Clickable({label, active, setActive}) {
+    return <span 
+        className={active === label ? "active" : ""}
+        onClick={ev=>setActive(label)}
+    >{label}</span> 
+}
+
+const TheWorld = () => {
+    return <div className="details">
+        <div className="featured" style={{background: "url(/images/Millenia.jpeg)"}}></div>
+        <div className="text">
+            <h3>Millenia, the world where it all began...</h3>
+            <p>
+                Millenia is a mythological world where the dragons descended thousands of years ago, causing chaos and destruction to the civilizations that lived there.
+            </p>
+            <p>
+                It is a planet of exhuberant beauty very similar to Earth, but with one pecualiarity: in this world the dragons nested and positioned themselves at the top of the food chain.
+            </p>
+            <p>
+                For years these creatures shared the world subjecting all races to their domain. However, their era is about to end.
+            </p>
+            <a className="btn rounded">See More...</a>
+        </div>
+    </div>
+}
+
+const TheDragons = () => {
+    return <div className="details">
+        <div className="featured" style={{background: "url(/images/dragons.jpeg)"}}></div>
+        <div className="text">
+            <h3>Winged rulers of chaos</h3>
+            <p>
+                The first dragons to descend to the land of Millenia are called the Ancient Dragons. This four Elemental Rulers are the parents of all the rest of the draconic brood in the world, they
+                are the purest and most majestic of their entire race.
+            </p>
+            <p>
+                Each elemental father is associated with an element of nature: Earth, Fire, Air and Water.
+            </p>
+            <p>
+                In dragons race there are 5 kinds of rarity (common, uncommon, rare, epic and legendary) each one depends on the purity of the bloodline and the features that NFT have. 
+            </p>
+            <a className="btn rounded">See More...</a>
+        </div>
+    </div>
+}
+const TheRace = () => {
+    return <div className="details">
+        <div className="featured" style={{background: "url(/images/races.jpeg)"}}></div>
+        <div className="text">
+            <h3>
+                The Most deadly race on the metaverse
+            </h3>
+            <p>
+                Dragons’s Race is the first racing NFT game in which you will earn utility tokens just for holding,  playing and winning against opponents from all over the world. 
+            </p>
+            <p>
+                The first rule is you must own at least one of the 10 thousand NFT’s of the collection. 
+            </p>
+            <p>
+                The second rule is that you must assign your dragon a power rune with a cryptocurrency sign, this sign will boost the power and speed of your dragon as the crypto market flows in real time.
+            </p>
+            <a className="btn rounded">See More...</a>
+        </div>
+    </div>
 }

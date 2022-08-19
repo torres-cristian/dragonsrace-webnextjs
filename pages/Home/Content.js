@@ -5,6 +5,7 @@ import Dragons from "./ContentComponents/Dragons"
 import Roadmap from "./ContentComponents/Roadmap"
 import Elemental from "./ContentComponents/Elemental"
 import Initial from "./ContentComponents/Initial"
+import HowTo from "./ContentComponents/HowTo"
 
 export default function Content() {
     return <div className="content">
@@ -16,6 +17,7 @@ export default function Content() {
             <Dragons/>
             <Roadmap/>
             <Elemental/>
+            <HowTo/>
         </div>
     </div>
 }

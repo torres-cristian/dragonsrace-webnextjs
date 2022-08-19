@@ -55,7 +55,6 @@ section {
   display: block;
   max-width: 1320px;
   margin: auto;
-  border: 1px solid red;
   min-height: 750px;
 }
 
@@ -119,19 +118,41 @@ nav .menu ul li {
 #story .details {
   margin-top: 50px;
   display: flex;
+  font-size: 1.2em;
 }
-#story .details > div {
+#story .details .text {
+  width: calc(100% - 500px);
   padding: 0 20px;
 }
-#story .details > div h3 {
+#story .details .text h3 {
   margin-top: 0;
 }
-#story .details > div p {
+#story .details .text p {
   text-align: justify;
 }
-#story .details > div a {
+#story .details .text a {
   float: right;
   display: block;
+}
+#story .details .featured {
+  display: block;
+  width: 500px;
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+}
+#story .buttons {
+  display: flex;
+  gap: 50px;
+}
+#story .buttons span {
+  padding: 15px 30px;
+  display: inline-block;
+  cursor: pointer;
+}
+#story .buttons .active {
+  border: 1px solid white;
+  font-weight: bold;
 }
 
 #dragons {
@@ -194,6 +215,13 @@ nav .menu ul li {
   transform: scaleX(-1);
 }
 
+#roadmap .slide {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  animation: 3s ease-out 0s 1 slideInFromLeft;
+}
 #roadmap .item {
   display: flex;
   align-items: center;
@@ -201,6 +229,67 @@ nav .menu ul li {
 }
 #roadmap .item .detail {
   width: 300px;
+}
+
+#rulers .rulersGrid {
+  display: flex;
+  gap: 30px;
+}
+#rulers .rulersGrid .ruler {
+  display: flex;
+}
+#rulers .rulersGrid .ruler .details {
+  display: none !important;
+  width: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+#rulers .rulersGrid .ruler:hover .details {
+  display: block !important;
+}
+
+#howto h2 {
+  text-align: right;
+}
+#howto .video {
+  display: flex;
+  justify-content: center;
+}
+
+#slider {
+  position: relative;
+}
+#slider .dots {
+  position: absolute;
+  bottom: 50px;
+  left: 25%;
+  display: flex;
+  gap: 10px;
+}
+#slider .dots span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 30px;
+}
+#slider .dots .active {
+  background-color: yellow;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=global.css.map */

@@ -52,7 +52,7 @@ section {
     display: block;
     max-width: 1320px;
     margin: auto;
-    border: 1px solid red;
+    // border: 1px solid red;
     min-height: 750px;
 }
 
@@ -118,7 +118,9 @@ nav {
     .details {
         margin-top: 50px;
         display: flex;
-        > div {
+        font-size: 1.2em;
+        .text {
+            width: calc(100% - 500px);
             padding: 0 20px;
             h3 {
                 margin-top: 0;
@@ -130,6 +132,26 @@ nav {
                 float: right;
                 display: block;
             }
+        }
+        .featured{
+            display: block;
+            width: 500px;
+            height: 330px;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    .buttons {
+        display: flex;
+        gap: 50px;
+        span {
+            padding: 15px 30px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .active {
+            border: 1px solid white;
+            font-weight: bold;
         }
     }
 }
@@ -195,6 +217,13 @@ nav {
 }
 
 #roadmap {
+    .slide {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        animation: 3s ease-out 0s 1 slideInFromLeft;
+    }
     .item {
         display: flex;
         align-items: center;
@@ -202,5 +231,73 @@ nav {
         .detail{
             width: 300px;
         }
+    }
+}
+
+#rulers {
+    .rulersGrid {
+        display: flex;
+        gap: 30px;
+        .ruler {
+            display: flex;
+            .details {
+                display: none!important;
+                // border: 1px solid red;
+                width: 200px;
+                padding: 20px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        .ruler:hover {
+            .details {
+                display: block!important;
+            }
+        }
+    }
+}
+
+#howto {
+    h2 {
+        text-align: right
+    }
+    .video {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#slider {
+    position: relative;
+    .dots{
+        position: absolute;
+        bottom: 50px;
+        left: 25%;
+        display: flex;
+        gap: 10px;
+        span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 30px;
+        }
+        .active {
+            background-color: yellow;
+        }
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
     }
 }
