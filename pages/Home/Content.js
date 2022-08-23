@@ -8,7 +8,7 @@ import Initial from "./ContentComponents/Initial"
 import HowTo from "./ContentComponents/HowTo"
 
 export default function Content() {
-    return <div className="content">
+    return <div className="content" id="mainContent">
         <div>
             <Menu/>
             <Initial/>

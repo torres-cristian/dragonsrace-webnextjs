@@ -1,10 +1,10 @@
-import React from "react";
+
 import Head from "next/head";
 import Backgrounds from "./Home/Backgrounds";
 import Content from "./Home/Content";
+import Thunders from "./Home/ContentComponents/Thunders";
 
-export default function Home() {
-
+export default function Home() {    
     return (
         <>
             <Head>
@@ -17,6 +17,7 @@ export default function Home() {
 
             <main style={{position: "relative"}}>
                 <Backgrounds/>
+                <Thunders/>
                 <Content />
             </main>
         </>

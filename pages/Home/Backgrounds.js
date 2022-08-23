@@ -9,6 +9,6 @@ export default function Backgrounds() {
         <Section backgroundURL={'Dragon_05.png'} index={5} />
         <Section backgroundURL={'Dragon_06.png'} index={6} />
         <Section backgroundURL={'Dragon_07.png'} index={7} />
-        <Section backgroundURL={'Dragon_08.png'} index={7} />
+        <Section backgroundURL={'Dragon_08.png'} index={8} />
     </>
 }

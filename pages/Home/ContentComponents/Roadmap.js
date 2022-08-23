@@ -20,7 +20,6 @@ export default function Roadmap() {
             }}
         >
             <div className="slide">
-                
                 <img src="/images/dragons.jpeg" width={250} />
                 <div>
                     <img src={`/images/father1.png`} width={50} /><br/>

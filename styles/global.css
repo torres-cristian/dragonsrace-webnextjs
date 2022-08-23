@@ -1,4 +1,136 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes lightAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+}
+@keyframes sky {
+  0% {
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+.scrolldown {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.scrolldown .chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+.scrolldown .chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+.scrolldown .chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+.scrolldown .chevron:before,
+.scrolldown .chevron:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: white;
+}
+.scrolldown .chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+.scrolldown .chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+.scrolldown .text {
+  display: block;
+  margin-top: 75px;
+  margin-left: -30px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.25;
+  animation: pulse 2s linear alternate infinite;
+}
+
 body {
   margin: 0;
   font-family: Montserrat;
@@ -55,7 +187,7 @@ section {
   display: block;
   max-width: 1320px;
   margin: auto;
-  min-height: 750px;
+  height: 100vh;
 }
 
 h2 {
@@ -63,9 +195,37 @@ h2 {
   text-transform: uppercase;
 }
 
+#thunders {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+#sky {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#sky svg {
+  animation: lightning 4s ease-in-out infinite;
+  left: 50%;
+  max-height: 100vh;
+  max-width: 100vw;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+
 nav {
-  height: 150px;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -76,14 +236,14 @@ nav .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 100px;
 }
 nav .menu {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: calc( 100vw - 300px );
-  height: 150px;
+  height: 100px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -94,18 +254,32 @@ nav .menu ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
+  height: 100%;
 }
 nav .menu ul li {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  font-size: 20px;
-  color: #ffcb74;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 2px;
+}
+nav .menu ul li:hover {
+  border-bottom: 5px solid white;
 }
 
 #welcome {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: calc( 100vh - 100px );
+  flex-direction: column;
+  position: relative;
+}
+#welcome .scrolldown {
+  position: absolute;
+  bottom: 10%;
 }
 
 #presentation {
@@ -119,6 +293,7 @@ nav .menu ul li {
   margin-top: 50px;
   display: flex;
   font-size: 1.2em;
+  animation: appear 0.4s ease-in 1;
 }
 #story .details .text {
   width: calc(100% - 500px);
@@ -208,11 +383,15 @@ nav .menu ul li {
 #dragons .slider {
   width: 40%;
   margin-left: -40px;
+  margin-top: -20%;
 }
 #dragons .slider img {
-  width: calc( 100% + 40px );
+  width: 1000px;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+#dragons .slider .animatedImg {
+  animation: lightAppear 0.4s ease-in 1;
 }
 
 #roadmap .slide {
@@ -248,6 +427,7 @@ nav .menu ul li {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 #rulers .rulersGrid .ruler:hover .details {
   display: block !important;

@@ -14,11 +14,19 @@ const images = [
 export default function SliderDragons() {
     const [index, setIndex] = useState(0)
     return <div id="slider">
-        <img src={images[index]} />
+        <img id="currentSliderImage" src={images[index]} />
         <div className="dots">
             {images.map((data, indice)=><span 
                 className={indice===index ? 'active' : ''}
-                onClick={()=>setIndex(indice)}
+                onClick={()=>{
+                    var DOMElement = document.getElementById("currentSliderImage");
+                    console.log("los elementos son", DOMElement )
+                    DOMElement.classList.remove("animatedImg")
+                    setTimeout(()=>{
+                        setIndex(indice)
+                        DOMElement.classList.add("animatedImg")
+                    }, 100)
+                }}
             ></span>)}
         </div>
     </div>

@@ -1,0 +1,59 @@
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lightning {
+    0% { opacity: 0; }
+    15% { opacity: 0.8; }
+    20% { opacity: 0.1; }
+    25% { opacity: 1; }
+    75% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes appear {
+    0% { transform: translateX(-40px); }
+    100% { transform: translateX(0px); }
+}
+
+@keyframes lightAppear {
+    0% { opacity: 0; 
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);}
+    100% { opacity: 1; 
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);}
+}
+
+@keyframes sky {
+    0% { opacity: 0.3; }
+    15% { opacity: 0.7; }
+    20% { opacity: 0.4; }
+    25% { opacity: 1; }
+    75% { opacity: 0.3; }
+    100% { opacity: 0.3; }
+}
