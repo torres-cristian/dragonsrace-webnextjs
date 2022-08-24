@@ -1,7 +1,7 @@
 import Slider from "./SliderDragons";
 
 export default function Dragons() {
-    return <section id="dragons">
+    return <section id="dragons" className="contentSection">
         <div className="details">
             <h2>10k Randomly Generated<br/>nft dragons</h2>
             <h3>Dragons are in the top of the food chain in Millenia</h3>

@@ -20,7 +20,7 @@ export default function SliderDragons() {
                 className={indice===index ? 'active' : ''}
                 onClick={()=>{
                     var DOMElement = document.getElementById("currentSliderImage");
-                    console.log("los elementos son", DOMElement )
+                    //console.log("los elementos son", DOMElement )
                     DOMElement.classList.remove("animatedImg")
                     setTimeout(()=>{
                         setIndex(indice)

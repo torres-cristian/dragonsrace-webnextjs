@@ -1,7 +1,7 @@
 import Ruler from "./Ruler"
 
 export default function Elemental() {
-    return <section id="rulers">
+    return <section id="rulers" className="contentSection">
         <h2>The four elemental<br/>rulers airdrops</h2>
         <div className="rulersGrid">
             <Ruler index={1}>

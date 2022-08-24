@@ -49,6 +49,14 @@
     transform: translateX(0px);
   }
 }
+@keyframes fromBottom {
+  0% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 @keyframes lightAppear {
   0% {
     opacity: 0;
@@ -183,7 +191,7 @@ body {
   border-radius: 10px;
 }
 
-section {
+.contentSection {
   display: block;
   max-width: 1320px;
   margin: auto;
@@ -288,7 +296,25 @@ nav .menu ul li:hover {
   justify-content: center;
   align-items: flex-start;
 }
+#presentation > div {
+  display: none;
+}
 
+#presentation.active > div {
+  display: block;
+  animation: fromBottom 0.5s ease-in 1;
+}
+
+#story.active {
+  animation: fromBottom 0.5s ease-in 1;
+}
+
+#story {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 #story .details {
   margin-top: 50px;
   display: flex;
@@ -318,6 +344,9 @@ nav .menu ul li:hover {
 }
 #story .buttons {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
   gap: 50px;
 }
 #story .buttons span {
@@ -398,8 +427,8 @@ nav .menu ul li:hover {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  animation: 3s ease-out 0s 1 slideInFromLeft;
 }
 #roadmap .item {
   display: flex;
@@ -427,10 +456,10 @@ nav .menu ul li:hover {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
-#rulers .rulersGrid .ruler:hover .details {
+#rulers .rulersGrid .ruler.active .details {
   display: block !important;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 #howto h2 {
@@ -465,7 +494,7 @@ nav .menu ul li:hover {
 
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0);
