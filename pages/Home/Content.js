@@ -7,6 +7,7 @@ import Elemental from "./ContentComponents/Elemental"
 import Initial from "./ContentComponents/Initial"
 import HowTo from "./ContentComponents/HowTo"
 import { useEffect } from "react"
+import { debounce } from "lodash";
 
 export default function Content() {
     function reveal() {
@@ -25,8 +26,37 @@ export default function Content() {
             }
         }
     }
+    
+    const disableScroll = ()=> {
+        var lastScrollTop = 0;
+        const windowHeight = window.innerHeight
+        let lastPointer = 0;
+        let skipNext = false
+        console.log("el heigjt es ", windowHeight)
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        window.scrollTo(0,lastPointer)
+        window.addEventListener("scroll", () => { 
+            var st = window.pageYOffset || document.documentElement.scrollTop; 
+            if(skipNext){
+                skipNext = false
+            } else {
+                
+                if (st > lastScrollTop){
+                    console.log("scroll abajo")
+                    lastPointer += windowHeight
+                } else {
+                    lastPointer -= windowHeight
+                    console.log("scroll arriba")
+                }
+                skipNext = true
+                window.scrollTo(0,lastPointer)
+            }      
+            lastScrollTop = st <= 0 ? 0 : st;       
+        });
+    }
     useEffect(()=>{
-        window.addEventListener("scroll", reveal);
+        disableScroll()
     }, [])
     return <div className="content" id="mainContent">
         <div className="allSections">

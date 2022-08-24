@@ -50,6 +50,9 @@ body {
 .rounded {
     border-radius: 10px;
 }
+.allSections {
+    overflow-x: hidden;
+}
 .contentSection {
     display: block;
     max-width: 1320px;
@@ -320,14 +323,20 @@ $welcomeWidth : calc( 100vh - 100px );
             .details {
                 display: none!important;
                 // border: 1px solid red;
-                width: 200px;
+                width: 350px;
                 padding: 20px;
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                text-align: center;
+                background-color: rgba(255,255,255,.7);
+                color: black; 
+                text-align: justify;
+                z-index: 1;
+            }
+            > img {
+                z-index: 2;
             }
         }
         .ruler.active {

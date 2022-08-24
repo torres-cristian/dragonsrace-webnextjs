@@ -191,6 +191,10 @@ body {
   border-radius: 10px;
 }
 
+.allSections {
+  overflow-x: hidden;
+}
+
 .contentSection {
   display: block;
   max-width: 1320px;
@@ -448,14 +452,20 @@ nav .menu ul li:hover {
 }
 #rulers .rulersGrid .ruler .details {
   display: none !important;
-  width: 200px;
+  width: 350px;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  text-align: justify;
+  z-index: 1;
+}
+#rulers .rulersGrid .ruler > img {
+  z-index: 2;
 }
 #rulers .rulersGrid .ruler.active .details {
   display: block !important;
