@@ -52,9 +52,11 @@
 @keyframes fromBottom {
   0% {
     transform: translateY(150px);
+    opacity: 0;
   }
   100% {
     transform: translateY(0px);
+    opacity: 1;
   }
 }
 @keyframes lightAppear {
@@ -144,27 +146,27 @@ body {
   font-family: Montserrat;
 }
 
-.section {
+.bgLayer {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 8194px;
+  height: calc( 100vw * 5.1180 );
   width: 100%;
 }
 
-.content {
+#mainContent {
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 8194px;
+  height: calc( 100vw * 5.1180 );
   width: 100%;
   color: white;
   z-index: 9;
 }
-.content > div {
+#mainContent > div {
   position: relative;
 }
 
@@ -309,8 +311,9 @@ nav .menu ul li:hover {
   animation: fromBottom 0.5s ease-in 1;
 }
 
-#story.active {
+#story.active .content {
   animation: fromBottom 0.5s ease-in 1;
+  display: flex;
 }
 
 #story {
@@ -319,112 +322,127 @@ nav .menu ul li:hover {
   align-items: center;
   flex-direction: column;
 }
-#story .details {
+#story .content {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#story .content .details {
   margin-top: 50px;
   display: flex;
   font-size: 1.2em;
   animation: appear 0.4s ease-in 1;
 }
-#story .details .text {
+#story .content .details .text {
   width: calc(100% - 500px);
   padding: 0 20px;
 }
-#story .details .text h3 {
+#story .content .details .text h3 {
   margin-top: 0;
 }
-#story .details .text p {
+#story .content .details .text p {
   text-align: justify;
 }
-#story .details .text a {
+#story .content .details .text a {
   float: right;
   display: block;
 }
-#story .details .featured {
+#story .content .details .featured {
   display: block;
   width: 500px;
   height: 330px;
   background-size: cover;
   background-position: center;
 }
-#story .buttons {
+#story .content .buttons {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
   gap: 50px;
 }
-#story .buttons span {
+#story .content .buttons span {
   padding: 15px 30px;
   display: inline-block;
   cursor: pointer;
 }
-#story .buttons .active {
+#story .content .buttons .active {
   border: 1px solid white;
   font-weight: bold;
 }
 
 #dragons {
   display: flex;
+  align-items: center;
 }
-#dragons .details {
+#dragons .content {
+  display: none;
+}
+#dragons .content .details {
   width: 60%;
 }
-#dragons .details .mintDate {
+#dragons .content .details .mintDate {
   display: flex;
 }
-#dragons .details .mintDate > div {
+#dragons .content .details .mintDate > div {
   flex-grow: 1;
 }
-#dragons .details .mintDate .fatherIcons {
+#dragons .content .details .mintDate .fatherIcons {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   margin-top: 30px;
   flex-grow: 3;
 }
-#dragons .details .mintDate .fatherIcons img {
+#dragons .content .details .mintDate .fatherIcons img {
   width: 80px;
   height: 80px;
 }
-#dragons .details .mintDate .calendar {
+#dragons .content .details .mintDate .calendar {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-#dragons .details .mintDate .calendar .widget {
+#dragons .content .details .mintDate .calendar .widget {
   width: 90px;
   border: 1px solid white;
   text-align: center;
   padding: 20px;
   margin-bottom: 20px;
 }
-#dragons .details .mintDate .calendar .widget > span {
+#dragons .content .details .mintDate .calendar .widget > span {
   display: block;
 }
-#dragons .details .mintDate .calendar .widget .day {
+#dragons .content .details .mintDate .calendar .widget .day {
   font-size: 80px;
   line-height: 65px;
 }
-#dragons .details .mintDate .calendar .widget .month {
+#dragons .content .details .mintDate .calendar .widget .month {
   font-size: 35px;
   line-height: 25px;
 }
-#dragons .details .mintDate .calendar .widget .year {
+#dragons .content .details .mintDate .calendar .widget .year {
   font-size: 28px;
 }
-#dragons .slider {
+#dragons .content .slider {
   width: 40%;
   margin-left: -40px;
   margin-top: -20%;
 }
-#dragons .slider img {
+#dragons .content .slider img {
   width: 1000px;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
-#dragons .slider .animatedImg {
+#dragons .content .slider .animatedImg {
   animation: lightAppear 0.4s ease-in 1;
+}
+
+#dragons.active .content {
+  display: flex;
+  animation: fromBottom 0.5s ease-in 1;
 }
 
 #roadmap .slide {
@@ -442,15 +460,29 @@ nav .menu ul li:hover {
 #roadmap .item .detail {
   width: 300px;
 }
+#roadmap .timeline-card-content {
+  display: none;
+}
+#roadmap ul.timeline-controls > li > button {
+  background: #1d1d1d;
+}
 
-#rulers .rulersGrid {
+#roadmap.active .timeline-card-content {
+  display: block;
+  animation: fromBottom 0.5s ease-in 1;
+}
+
+#rulers .content {
+  display: none;
+}
+#rulers .content .rulersGrid {
   display: flex;
   gap: 30px;
 }
-#rulers .rulersGrid .ruler {
+#rulers .content .rulersGrid .ruler {
   display: flex;
 }
-#rulers .rulersGrid .ruler .details {
+#rulers .content .rulersGrid .ruler .details {
   display: none !important;
   width: 350px;
   padding: 20px;
@@ -464,20 +496,39 @@ nav .menu ul li:hover {
   text-align: justify;
   z-index: 1;
 }
-#rulers .rulersGrid .ruler > img {
+#rulers .content .rulersGrid .ruler > img {
   z-index: 2;
 }
-#rulers .rulersGrid .ruler.active .details {
+#rulers .content .rulersGrid .ruler.active .details {
   display: block !important;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
-#howto h2 {
-  text-align: right;
+#rulers.active .content {
+  display: block;
+  animation: fromBottom 0.5s ease-in 1;
 }
-#howto .video {
+
+#howto {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+#howto .content {
+  display: none;
+  width: 100%;
+}
+#howto .content h2 {
+  text-align: center;
+}
+#howto .content .video {
+  display: flex;
+  justify-content: center;
+}
+
+#howto.active .content {
+  display: block;
+  animation: fromBottom 0.5s ease-in 1;
 }
 
 #slider {

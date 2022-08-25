@@ -6,11 +6,13 @@ import Roadmap from "./ContentComponents/Roadmap"
 import Elemental from "./ContentComponents/Elemental"
 import Initial from "./ContentComponents/Initial"
 import HowTo from "./ContentComponents/HowTo"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { debounce } from "lodash";
 
 export default function Content() {
-    function reveal() {
+    const [lastPointer, setLastPointer] = useState(0)
+
+    const reveal = () => {
         var reveals = document.querySelectorAll(".contentSection");
         console.log("el reveals es ", reveals)
         for (var i = 0; i < reveals.length; i++) {
@@ -28,32 +30,7 @@ export default function Content() {
     }
     
     const disableScroll = ()=> {
-        var lastScrollTop = 0;
-        const windowHeight = window.innerHeight
-        let lastPointer = 0;
-        let skipNext = false
-        console.log("el heigjt es ", windowHeight)
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-        window.scrollTo(0,lastPointer)
-        window.addEventListener("scroll", () => { 
-            var st = window.pageYOffset || document.documentElement.scrollTop; 
-            if(skipNext){
-                skipNext = false
-            } else {
-                
-                if (st > lastScrollTop){
-                    console.log("scroll abajo")
-                    lastPointer += windowHeight
-                } else {
-                    lastPointer -= windowHeight
-                    console.log("scroll arriba")
-                }
-                skipNext = true
-                window.scrollTo(0,lastPointer)
-            }      
-            lastScrollTop = st <= 0 ? 0 : st;       
-        });
+        window.addEventListener("scroll", reveal);
     }
     useEffect(()=>{
         disableScroll()

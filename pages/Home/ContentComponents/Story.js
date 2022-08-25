@@ -4,12 +4,14 @@ export default function Story() {
     const [active, setActive] = useState('The World')
 
     return <section id="story" className="contentSection">
-        <div className="buttons">
-            <Clickable label={'The World'} active={active} setActive={setActive}/>
-            <Clickable label={'The Dragons'} active={active} setActive={setActive}/>
-            <Clickable label={'The Race'} active={active} setActive={setActive}/>
+        <div className="content">
+            <div className="buttons">
+                <Clickable label={'The World'} active={active} setActive={setActive}/>
+                <Clickable label={'The Dragons'} active={active} setActive={setActive}/>
+                <Clickable label={'The Race'} active={active} setActive={setActive}/>
+            </div>
+            {active === 'The World' ? <TheWorld/> : active === 'The Dragons' ? <TheDragons/> : <TheRace/> }
         </div>
-        {active === 'The World' ? <TheWorld/> : active === 'The Dragons' ? <TheDragons/> : <TheRace/> }
     </section>
 }
 

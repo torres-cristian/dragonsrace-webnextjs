@@ -11,7 +11,7 @@ export default function Ruler({index, children}) {
     return <div className="ruler" onMouseOver={setActive}>
         <img src={`/images/fatherSlide_${index}.png`} width={180} />
         <div className="details">
-            <img src={`/images/father${index}.png`} width={80} />
+            <img src={`/images/father${index}.svg`} width={100} />
             <div>
                 {children}
             </div>
