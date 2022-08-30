@@ -203,6 +203,11 @@ nav .logo {
   align-items: center;
   height: 100px;
 }
+@media (max-width: 667px) {
+  nav .logo {
+    width: 200px;
+  }
+}
 nav .menu {
   margin: 0;
   padding: 0;
@@ -237,6 +242,9 @@ nav .menu ul li:hover {
   nav .fullMenu {
     display: none;
   }
+}
+nav .mobileMenu {
+  flex-grow: 2;
 }
 @media (min-width: 668px) {
   nav .mobileMenu {

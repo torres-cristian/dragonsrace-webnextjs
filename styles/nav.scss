@@ -17,6 +17,9 @@ nav {
         justify-content: center;
         align-items: center;
         height: $navHeight;
+        @include for_breakpoint(mobile) {
+            width: 200px;
+        }
     }
     .menu {
         margin: 0;
@@ -54,6 +57,7 @@ nav {
         }
     }
     .mobileMenu {
+        flex-grow: 2;
         @include for_breakpoint(desktop) {
             display: none;
         }
