@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Ruler({index, children}) {
     const setActive = ()=> {
@@ -8,6 +8,11 @@ export default function Ruler({index, children}) {
         }
         DOMElements[(index-1)].classList.add("active")
     }
+    useEffect(()=>{
+        if(index === 1){
+            setActive()
+        }
+    }, [])
     return <div className="ruler" onMouseOver={setActive}>
         <img src={`/images/fatherSlide_${index}.png`} width={180} />
         <div className="details">

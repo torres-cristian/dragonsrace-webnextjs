@@ -68,3 +68,49 @@
     75% { opacity: 0.3; }
     100% { opacity: 0.3; }
 }
+
+@keyframes disappear {
+    0% { 
+        opacity: 1; 
+    }
+    100% { 
+        opacity: 0; 
+    }
+}
+@keyframes appearOpacity {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes hidetoright {
+    0% {
+      transform: translateX(0);
+      width: 300px;
+    }
+    100% {
+      transform: translateX(100%);
+      width: 0;
+    }
+}
+@keyframes showfromright {
+    0% {
+      transform: translateX(100%);
+      width: 0;
+    }
+    100% {
+      transform: translateX(0);
+      width: 100px;
+    }
+}

@@ -1,7 +1,7 @@
 import { Chrono } from "react-chrono"
 import ItemRoadmap from "./ItemRoadmap"
 export default function Roadmap() {
-    return <section id="roadmap" className="contentSection">
+    return <section id="roadmap" className="contentSection" style={{height: 'auto'}}>
         {/* <ItemRoadmap type={'left'} father={1} index={0}/>
         <ItemRoadmap type={'right'} father={2} index={1}/>
         <ItemRoadmap type={'left'} father={3} index={2}/>
@@ -9,9 +9,10 @@ export default function Roadmap() {
         <Chrono
             mode="VERTICAL_ALTERNATING"
             slideShow
+            hideControls
             theme={{
                 primary: 'white',
-                secondary: 'yellow',
+                secondary: '#ffcb74',
                 cardBgColor: 'rgba(255,255,255,.2)',
                 cardForeColor: 'black',
                 titleColor: 'black',

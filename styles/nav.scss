@@ -1,0 +1,120 @@
+@import 'mediaQueries.scss';
+
+$navHeight : 100px;
+$navHoverColor: white;
+$navColor: rgba(0,0,0,.2);
+nav {
+    height: $navHeight;
+    background-color: $navColor;
+    border-bottom: 1px solid $navColor;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .logo {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $navHeight;
+    }
+    .menu {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: calc( 100vw - 300px );
+        height: $navHeight;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            height: 100%;
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                font-size: 18px;
+                color: $navHoverColor;
+                letter-spacing: 2px;    
+            }
+            li:hover {
+                border-bottom: 5px solid $navHoverColor;
+            }
+        }
+    }
+    .fullMenu{
+        @include for_breakpoint(mobile) {
+            display: none;
+        }
+    }
+    .mobileMenu {
+        @include for_breakpoint(desktop) {
+            display: none;
+        }
+    }
+}
+
+#collapsableMenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    .content {
+        overflow-x: hidden;
+        display: block;
+        position: fixed;
+        top:0;
+        right: 0;
+        width: 0;
+        background-color: black;
+        height: 100vh;
+        h3 {
+            padding: 0 20px;
+            svg {
+                float: right;
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                height: 70px;
+                display: flex;
+                justify-content: flex-start;
+                padding: 0 20px;
+                align-items: center;
+                text-align: left;
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,.3);
+                font-family: Montserrat;
+            }
+        }
+    }
+}
+#collapsableMenu.inactive {
+    animation-delay: 1s;
+    animation: 1s ease-out disappear;
+    width: 0;
+    .content {
+        animation: 1s ease-out hidetoright;
+        width: 0;
+    }
+}
+
+#collapsableMenu.active {
+    width: 100%;
+    .content {
+        animation: 0.3s ease-in showfromright;
+        width: 300px;
+    }
+}

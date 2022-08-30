@@ -8,6 +8,9 @@ import Initial from "./ContentComponents/Initial"
 import HowTo from "./ContentComponents/HowTo"
 import { useEffect, useState } from "react"
 import { debounce } from "lodash";
+import Video from "./ContentComponents/Video"
+import SiteMap from "./ContentComponents/SiteMap"
+import CollapsableMenu from "./ContentComponents/CollapsableMenu"
 
 export default function Content() {
     const [lastPointer, setLastPointer] = useState(0)
@@ -45,6 +48,9 @@ export default function Content() {
             <Roadmap/>
             <Elemental/>
             <HowTo/>
+            <Video/>
+            <SiteMap/>
+            <CollapsableMenu/>
         </div>
     </div>
 }
