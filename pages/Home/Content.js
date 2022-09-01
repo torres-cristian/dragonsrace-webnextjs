@@ -11,6 +11,7 @@ import { debounce } from "lodash";
 import Video from "./ContentComponents/Video"
 import SiteMap from "./ContentComponents/SiteMap"
 import CollapsableMenu from "./ContentComponents/CollapsableMenu"
+import Thunders from "./ContentComponents/Thunders"
 
 export default function Content() {
     const [lastPointer, setLastPointer] = useState(0)
@@ -33,24 +34,34 @@ export default function Content() {
     }
     
     const disableScroll = ()=> {
-        window.addEventListener("scroll", reveal);
+        //window.addEventListener("scroll", reveal);
+        var reveals = document.querySelectorAll(".contentSection");
+
+        for (var i = 0; i < reveals.length; i++) {
+            reveals[i].classList.add("active");
+        }
     }
     useEffect(()=>{
         disableScroll()
     }, [])
     return <div className="content" id="mainContent">
-        <div className="allSections">
-            <Menu/>
-            <Initial/>
-            <Presentation/>
-            <Story/>
-            <Dragons/>
-            <Roadmap/>
-            <Elemental/>
-            <HowTo/>
-            <Video/>
-            <SiteMap/>
-            <CollapsableMenu/>
+        <div className="bg">
+            <Thunders/>
+            <div className="allSections">
+                <Menu/>
+                <Initial/>
+                <Presentation/>
+                <Story/>
+                <Dragons/>
+                <Roadmap/>
+                <Elemental/>
+                <HowTo/>
+                <Video/>
+                <CollapsableMenu/>
+            </div>
         </div>
+        <footer>
+            <SiteMap/>
+        </footer>
     </div>
 }

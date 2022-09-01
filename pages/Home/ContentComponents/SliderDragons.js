@@ -13,20 +13,25 @@ const images = [
 
 export default function SliderDragons() {
     const [index, setIndex] = useState(0)
+    const [visible, setVisible] = useState(true)
+
+    const changeImage = (_index) => {
+        var DOMElement = document.getElementById("currentSliderImage");
+        DOMElement.classList.remove("animatedImg")
+
+        setIndex(_index)
+        setVisible(false)
+    }
     return <div id="slider">
-        <img id="currentSliderImage" src={images[index]} />
+        <img id="currentSliderImage" className="animatedImg" src={images[index]} style={visible ? {} : { visibility: 'hidden' }} onLoad={()=>{
+            var DOMElement = document.getElementById("currentSliderImage");
+            DOMElement.classList.add("animatedImg")
+            setVisible(true)
+        }} /> 
         <div className="dots">
             {images.map((data, indice)=><span 
                 className={indice===index ? 'active' : ''}
-                onClick={()=>{
-                    var DOMElement = document.getElementById("currentSliderImage");
-                    //console.log("los elementos son", DOMElement )
-                    DOMElement.classList.remove("animatedImg")
-                    setTimeout(()=>{
-                        setIndex(indice)
-                        DOMElement.classList.add("animatedImg")
-                    }, 100)
-                }}
+                onClick={()=>changeImage(indice)}
             ></span>)}
         </div>
     </div>

@@ -47,7 +47,7 @@ export default function Elemental() {
                     </p>
                 </Ruler>
                 <Ruler index={4}>
-                    <h3>Liqüo</h3>
+                    <h3>Liqüo Magnus</h3>
                     <p>
                         He is the largest of all the dragons that have ever existed. He made seas and
                         oceans his abode where he remains oblivious to what happens in the outside world. He

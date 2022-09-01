@@ -46,5 +46,4 @@ function render() {
     // Get ready-to-render L-system’s SVG code as a string...
     let svgCode = getMultiPathSVGCode(lsParams, svgParams);
     header.insertAdjacentHTML("beforeend", `<div id="sky">${svgCode}</div>`);
-    header.insertAdjacentHTML("beforeend", `<div id="sky">${svgCode}</div>`);
 }

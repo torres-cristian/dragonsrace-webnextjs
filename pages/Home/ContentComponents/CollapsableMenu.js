@@ -1,4 +1,5 @@
 import {CgCloseO} from "react-icons/cg"
+import OptionsMenuList from "./OptionsMenuList"
 
 export default function CollapsableMenu() {
     const closeMenu = () => {
@@ -10,13 +11,7 @@ export default function CollapsableMenu() {
     return <div id="collapsableMenu">
         <div className="content">
             <h3>Main Menu <CgCloseO onClick={closeMenu}/></h3>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Roadmap</li>
-                <li>The Dragons</li>
-                <li>How To Play</li>
-            </ul>
+            <OptionsMenuList/>
         </div>
     </div>
 }
