@@ -1,0 +1,86 @@
+@import 'mediaQueries.scss';
+
+#story.active{
+    .content {
+        animation: fromBottom 0.5s ease-in 1;
+        visibility: visible;
+    }
+}
+#story{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .content {
+        display: flex;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .details {
+            margin-top: 50px;
+            display: flex;
+            font-size: 1.2em;
+            animation: appear 0.4s ease-in 1;
+    
+            .text {
+                width: calc(100% - 500px);
+                padding: 0 20px;
+                box-sizing: border-box;
+                h3 {
+                    margin-top: 0;
+                }
+                p {
+                    text-align: justify;
+                }
+                a {
+                    float: right;
+                    display: block;
+                }
+                @include for_breakpoint(mobile) {
+                    width: 100%;
+                    padding: 0;
+                    font-size: .8em;
+                }
+            }
+            .featured{
+                display: block;
+                width: 500px;
+                height: 330px;
+                background-size: cover!important;
+                background-position: center;
+                @include for_breakpoint(mobile) {
+                    width: 300px;
+                    height: 200px;
+                    margin: auto;
+                    margin-bottom: 30px;
+                }
+            }
+            @include for_breakpoint(mobile) {
+                display: block;
+            }
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            gap: 50px;
+            span {
+                padding: 15px 30px;
+                display: inline-block;
+                cursor: pointer;
+                
+            }
+            .active {
+                border: 1px solid white;
+                font-weight: bold;
+            }
+            @include for_breakpoint(mobile) {
+                gap:10px;
+            }
+        }
+    }
+    
+}

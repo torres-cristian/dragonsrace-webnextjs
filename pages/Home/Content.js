@@ -24,7 +24,7 @@ export default function Content() {
             var elementTop = reveals[i].getBoundingClientRect().top;
             var elementVisible = elementTop - windowHeight;
             console.log("el alto de la venta", windowHeight, "ELEMENT TOP", elementTop)
-            if (elementTop < 200) {
+            if (elementTop < 700) {
                 reveals[i].classList.add("active");
                 console.log("le pongo activo ___>>>")
             } else {
@@ -34,12 +34,12 @@ export default function Content() {
     }
     
     const disableScroll = ()=> {
-        //window.addEventListener("scroll", reveal);
-        var reveals = document.querySelectorAll(".contentSection");
+        window.addEventListener("scroll", reveal);
+        // var reveals = document.querySelectorAll(".contentSection");
 
-        for (var i = 0; i < reveals.length; i++) {
-            reveals[i].classList.add("active");
-        }
+        // for (var i = 0; i < reveals.length; i++) {
+        //     reveals[i].classList.add("active");
+        // }
     }
     useEffect(()=>{
         disableScroll()

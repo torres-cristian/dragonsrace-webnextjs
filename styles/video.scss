@@ -1,0 +1,23 @@
+@import 'mediaQueries.scss';
+
+#video {
+    // border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+        display: block;
+        visibility: hidden;
+        iframe {
+            @include for_breakpoint(mobile) {
+                width: 100%;
+            }
+        }
+    }
+}
+#video.active {
+    .content {
+        visibility: visible;
+        animation: fromBottom 0.5s ease-in 1;
+    }
+}

@@ -1,0 +1,102 @@
+@import 'mediaQueries.scss';
+
+#sitemap {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    .content {
+        display: block;
+        visibility: hidden;
+        .navigate {
+            display: flex;
+            gap: 5em;
+            justify-content: space-between;
+            > div {
+                border-right: 1px solid white;
+                flex-grow: 1;
+                box-sizing: border-box;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    li {
+                        font-size: 1.2em;
+                        padding: 10px 0;
+                    }
+                }
+                a {
+                    color: white;
+                    font-size: 1.2em;
+                    // text-decoration: none;
+                }
+            }
+            
+            @include for_breakpoint(mobile) {
+                flex-direction: column;
+            }
+        }
+        .contact{
+            margin: 5em 0;
+            display: flex;
+            .newsl {
+                flex-grow: 2;
+                .inputSubs{
+                    position: relative;
+                    display: block;
+                    width: 600px;
+                    background: rgba(255,255,255,.3);
+                    border-radius: 7px;
+                    height: 40px;
+                    display: flex;
+                    input {
+                        flex-grow: 3;
+                        background-color: transparent;
+                        border: none;
+                        border-radius: 7px;
+                        outline: none;
+                        color: white;
+                        font-size: 1.2em;
+                        padding: 10px;
+                    }
+                    button {
+                        background-color: orange;
+                        border: none;
+                        border-radius: 7px;
+                        color: white;
+                        flex-grow: 1;
+                    }
+                    @include for_breakpoint(mobile) {
+                        width: 100%;
+                    }
+                }
+            }
+            .modes {
+                flex-grow: 1;
+                a {
+                    color: white;
+                }
+                @include for_breakpoint(mobile) {
+                    margin-top: 30px;
+                }
+            }
+            @include for_breakpoint(mobile) {
+                flex-direction: column;
+                margin: 30px 0;
+            }
+        }
+        .lastOne {
+            display: flex;
+            justify-content: flex-end; 
+            margin-bottom: 2em;
+        }
+    } 
+    .copyrights{
+        text-align: center;
+        margin-top: 5em;
+    }
+}
+#sitemap.active {
+    .content {
+        visibility: visible;
+        animation: fromBottom 0.5s ease-in 1;
+    }
+}

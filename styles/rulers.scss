@@ -1,0 +1,53 @@
+@import 'mediaQueries.scss';
+
+#rulers {
+    .content {
+        display: block;
+        visibility: hidden;
+        .rulersGrid {
+            display: flex;
+            gap: 30px;
+            .ruler {
+                display: flex;
+                .details {
+                    display: none!important;
+                    // border: 1px solid red;
+                    width: 350px;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    background-color: rgba(255,255,255,.7);
+                    color: black; 
+                    text-align: justify;
+                    z-index: 1;
+                    @include for_breakpoint(mobile) {
+                        display: block!important;
+                    }
+                }
+                > img {
+                    z-index: 2;
+                }
+            }
+            .ruler.active {
+                .details {
+                    display: block!important;
+                    animation: 1s ease-out 0s 1 slideInFromLeft;
+                }
+            }
+            @include for_breakpoint(mobile) {
+                flex-direction: column;
+                font-size: 0.8em;
+            }
+        }
+    }
+    
+}
+#rulers.active {
+    .content {
+        visibility: visible;
+        animation: fromBottom 0.5s ease-in 1;
+    }
+}

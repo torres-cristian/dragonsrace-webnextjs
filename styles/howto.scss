@@ -1,0 +1,42 @@
+@import 'mediaQueries.scss';
+
+#howto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+        display: block;
+        visibility: hidden;
+        width: 100%;
+        h2 {
+            text-align: right
+        }
+        .video {
+            display: flex;
+            justify-content: center;
+        }
+        .gameOptions {
+            display: flex;   
+            margin: 30px 0;
+            gap: 20px;
+            > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                p {
+                    text-align: center;
+                }
+            }
+            @include for_breakpoint(mobile) {
+                flex-direction: column;
+            }
+        }
+    }
+}
+#howto.active {
+    .content {
+        visibility: visible;
+        animation: fromBottom 0.5s ease-in 1;
+    }
+}

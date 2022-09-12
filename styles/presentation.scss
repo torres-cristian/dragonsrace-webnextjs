@@ -1,0 +1,16 @@
+#presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .content {
+        display: block;
+        visibility: hidden;
+    }
+}
+#presentation.active {
+    .content {
+        visibility: visible;
+        animation: fromBottom 0.5s ease-in 1;
+    }
+}

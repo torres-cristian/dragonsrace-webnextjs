@@ -1,0 +1,45 @@
+@import 'mediaQueries.scss';
+
+#roadmap {
+    .content {
+        visibility: hidden;
+        .slide {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            h2 {
+                @include for_breakpoint(mobile) {
+                    padding-left: 20px;
+                }
+            }
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            .detail{
+                width: 300px;
+            }
+        }
+        ul.timeline-controls{
+            > li > button {
+                background: #1d1d1d;
+            }
+        }
+        .visible {
+            visibility: hidden;
+        }
+    }
+}
+
+#roadmap.active {
+    .content{
+        visibility: visible;
+        animation: fromBottom 0.5s ease-in 1;
+        .visible {
+            visibility: visible;
+        }
+    }
+}
