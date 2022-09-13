@@ -12,6 +12,7 @@ import Video from "./ContentComponents/Video"
 import SiteMap from "./ContentComponents/SiteMap"
 import CollapsableMenu from "./ContentComponents/CollapsableMenu"
 import Thunders from "./ContentComponents/Thunders"
+import Discord from "./ContentComponents/Discord"
 
 export default function Content() {
     const [lastPointer, setLastPointer] = useState(0)
@@ -58,6 +59,7 @@ export default function Content() {
                 <HowTo/>
                 <Video/>
                 <CollapsableMenu/>
+                <Discord/>
             </div>
         </div>
         <footer>

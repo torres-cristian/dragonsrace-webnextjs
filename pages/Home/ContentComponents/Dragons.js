@@ -26,7 +26,7 @@ export default function Dragons() {
                             <span className="year">2022</span>
                         </div>
                         {/* que te lleve al discord */}
-                        <a className="btnWhite">Join whitelist</a>
+                        <a className="btnWhite" href="https://discord.gg/NuCGS6gtuA" target="_blank">JOIN US</a>
                     </div>
                 </div>
             </div>

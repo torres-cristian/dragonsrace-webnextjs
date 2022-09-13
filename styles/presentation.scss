@@ -12,5 +12,9 @@
     .content {
         visibility: visible;
         animation: fromBottom 0.5s ease-in 1;
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 }

@@ -4,6 +4,10 @@
     .content {
         animation: fromBottom 0.5s ease-in 1;
         visibility: visible;
+        .btn {
+            color: white;
+            text-decoration: none;
+        }
     }
 }
 #story{

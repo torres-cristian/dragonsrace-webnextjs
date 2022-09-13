@@ -36,7 +36,7 @@ const TheWorld = () => {
             <p>
                 For years these creatures shared the world subjecting all races to their domain. However, their era is about to end.
             </p>
-            <a className="btn rounded">See More...</a>
+            <a className="btn rounded" href="https://whitepaper.dragonsrace.com/the-lore" target='_blank'>See More...</a>
         </div>
     </div>
 }
@@ -56,7 +56,7 @@ const TheDragons = () => {
             <p>
                 In dragons race there are 5 kinds of rarity (common, uncommon, rare, epic and legendary) each one depends on the purity of the bloodline and the features that NFT have. 
             </p>
-            <a className="btn rounded">See More...</a>
+            <a className="btn rounded" href="https://whitepaper.dragonsrace.com/actores" target='_blank'>See More...</a>
         </div>
     </div>
 }
@@ -76,7 +76,7 @@ const TheRace = () => {
             <p>
                 The second rule is that you must assign your dragon a power rune with a cryptocurrency sign, this sign will boost the power and speed of your dragon as the crypto market flows in real time.
             </p>
-            <a className="btn rounded">See More...</a>
+            <a className="btn rounded" href="https://whitepaper.dragonsrace.com/the-game" target='_blank'>See More...</a>
         </div>
     </div>
 }
