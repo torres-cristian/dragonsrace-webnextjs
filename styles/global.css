@@ -499,8 +499,8 @@ nav .mobileMenu {
   display: block;
 }
 #dragons .content .details .mintDate .calendar .widget .day {
-  font-size: 80px;
-  line-height: 65px;
+  font-size: 20px;
+  line-height: 33px;
 }
 #dragons .content .details .mintDate .calendar .widget .month {
   font-size: 35px;
@@ -859,7 +859,7 @@ body {
   color: white;
 }
 #mainContent .bg {
-  background-image: url("../public/images/webbg_hd.jpg");
+  background-image: url("../public/images/webbg_ld.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;

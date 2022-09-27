@@ -21,9 +21,8 @@ export default function Dragons() {
                     </div>
                     <div className="calendar">
                         <div className="widget">
-                            <span className="day">21</span>
-                            <span className="month">SEP</span>
-                            <span className="year">2022</span>
+                            <span className="day">COMING</span>
+                            <span className="year">SOON</span>
                         </div>
                         {/* que te lleve al discord */}
                         <a className="btnWhite" href="https://discord.gg/NuCGS6gtuA" target="_blank">JOIN US</a>

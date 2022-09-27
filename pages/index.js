@@ -29,6 +29,7 @@ export default function Home() {
                 <meta name="msapplication-TileColor" content="#ffffff" />
                 <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
                 <meta name="theme-color" content="#ffffff" />
+                <meta name="facebook-domain-verification" content="ek187em2oj0qb9y296rh09ck1waopg" />
             </Head>
 
             <main style={{position: "relative"}}>
